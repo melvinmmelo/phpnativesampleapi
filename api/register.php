@@ -42,7 +42,10 @@ if (
 
     if ($stmt->execute()) {
         http_response_code(201);
-        echo json_encode(array("message" => "User registered successfully."));
+        echo json_encode(array(
+            "success" => true,
+            "message" => "User registered successfully."
+        ));
     } else {
         http_response_code(500);
         echo json_encode(array("message" => "Unable to register user."));

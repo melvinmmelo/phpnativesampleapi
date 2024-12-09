@@ -29,6 +29,7 @@ if (!empty($data->email) && !empty($data->password)) {
         if (password_verify($data->password, $password)) {
             http_response_code(200);
             echo json_encode(array(
+                "success" => true,
                 "message" => "Login successful.",
                 "user" => array(
                     "id" => $id,
